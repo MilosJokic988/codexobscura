@@ -1,0 +1,151 @@
+.projects {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+  position: relative;
+}
+
+.projects h2 {
+  color: var(--accent);
+  text-align: center;
+  margin-bottom: 24px;
+  text-shadow: 0 0 6px #b80f13, 0 0 12px #ff2a2a;
+}
+
+.projects-title {
+  text-align: center;
+  margin-bottom: 24px;
+  font-size: 2.2rem;
+  font-family: 'Share Tech Mono', monospace;
+}
+
+.glow-letter {
+  color: var(--accent);
+  text-shadow:
+    0 0 4px #b80f13,
+    0 0 8px #ff2a2a,
+    0 0 12px #b80f13;
+  display: inline-block;
+  animation: flicker 1.5s infinite alternate;
+}
+
+.glow-letter:nth-child(odd) { animation-delay: 0s; }
+.glow-letter:nth-child(even) { animation-delay: 0.3s; }
+
+@keyframes flicker {
+  0%, 100% { text-shadow: 0 0 4px #b80f13, 0 0 8px #ff2a2a, 0 0 12px #b80f13; }
+  50% { text-shadow: 0 0 8px #ff2a2a, 0 0 12px #b80f13, 0 0 16px #ff2a2a; }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+}
+
+.card {
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.2));
+  padding: 18px;
+  border-radius: 10px;
+  text-align: center;
+  transform: translateY(20px);
+  opacity: 0;
+  animation: fadeInCard 0.8s forwards;
+  animation-delay: calc(var(--i) * 0.1s);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 0 12px #b80f13, 0 0 18px #ff2a2a;
+}
+
+.card h3 {
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+
+.card p {
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+
+.btn.small {
+  padding: 6px 12px;
+  font-size: 0.85rem;
+  box-shadow: 0 0 6px #b80f13;
+}
+
+.btn.small:hover {
+  box-shadow: 0 0 12px #ff2a2a, 0 0 18px #b80f13;
+  opacity: 0.9;
+}
+
+@keyframes fadeInCard {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Donji desni ugao: strelice */
+.corner-arrows {
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  z-index: 50; /* da budu iznad ostalog sadržaja */
+}
+
+.arrow-letter {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  animation: float 2s ease-in-out infinite alternate;
+}
+
+.arrow-letter .arrow {
+  color: var(--accent);
+  font-size: 1rem; /* manja veličina za mobilni */
+  text-shadow: 0 0 4px #b80f13, 0 0 8px #ff2a2a, 0 0 12px #b80f13;
+  animation: bounce 1.2s infinite;
+}
+
+.arrow-letter .letter {
+  color: var(--muted);
+  font-family: 'Share Tech Mono', monospace;
+  font-weight: 700;
+  font-size: 0.8rem;
+  text-shadow: 0 0 4px #b80f13;
+}
+
+/* Animacije */
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); } /* blaže za mobilni */
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  100% { transform: translateY(-3px); } /* blaže za mobilni */
+}
+
+/* Responsive tweaks */
+@media(max-width: 900px) {
+  .corner-arrows {
+    bottom: 12px;
+    right: 12px;
+    gap: 3px;
+  }
+
+  .arrow-letter .arrow {
+    font-size: 0.85rem;
+  }
+
+  .arrow-letter .letter {
+    font-size: 0.7rem;
+  }
+}

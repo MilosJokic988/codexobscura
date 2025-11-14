@@ -1,0 +1,262 @@
+/* About section - transparent container */
+.about-section {
+  position: relative;
+  padding: 60px 24px;
+  display: flex;
+  justify-content: center;
+  color: #fff;
+  z-index: 1;
+}
+
+.about-container {
+  width: 100%;
+  max-width: 850px;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 36px 24px;
+  backdrop-filter: blur(6px);
+  text-align: justify;
+  box-shadow: 0 0 25px rgba(184, 15, 19, 0.15);
+  animation: fadeIn 1.5s ease forwards;
+}
+
+/* Naslov */
+.about-title {
+  font-size: clamp(30px, 6vw, 52px);
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 32px;
+  text-shadow: 0 0 6px rgba(184, 15, 19, 0.9), 0 0 12px rgba(255, 30, 30, 0.25);
+  letter-spacing: 1px;
+}
+
+/* Glavni tekst */
+.about-text {
+  font-size: clamp(16px, 1.6vw, 19px);
+  line-height: 1.75;
+  margin-bottom: 18px;
+  color: rgba(255, 255, 255, 0.95);
+  text-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Sekcije unutar about stranice */
+.about-philosophy,
+.about-types,
+.about-tech,
+.about-principles,
+.about-timeline {
+  margin-top: 48px;
+  text-align: left;
+}
+
+.about-philosophy h3,
+.about-types h3,
+.about-tech h3,
+.about-principles h3,
+.about-timeline h3 {
+  color: var(--accent, #b80f13);
+  font-size: 1.6rem;
+  margin-bottom: 14px;
+  text-shadow: 0 0 6px rgba(184, 15, 19, 0.6);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Paragrafi unutar sekcija */
+.about-philosophy p,
+.about-types p {
+  color: #ccc;
+  line-height: 1.6;
+}
+
+/* Liste */
+.about-types ul,
+.about-principles ul,
+.about-timeline ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.about-types li,
+.about-principles li,
+.about-timeline li {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 10px 16px;
+  border-radius: 6px;
+  margin-bottom: 8px;
+  line-height: 1.6;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.about-types li:hover,
+.about-principles li:hover,
+.about-timeline li:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateX(3px);
+}
+
+/* Tehnologije */
+.about-tech .tech-icons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.2rem;
+  margin-top: 10px;
+}
+
+.about-tech .tech-icons span {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 10px 18px;
+  border-radius: 6px;
+  font-weight: 600;
+  color: #fff;
+  text-shadow: 0 0 6px rgba(184, 15, 19, 0.3);
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.about-tech .tech-icons span:hover {
+  background: rgba(184, 15, 19, 0.2);
+  transform: translateY(-3px);
+}
+
+/* Quote */
+.about-quote {
+  margin: 50px auto;
+  padding: 20px;
+  font-style: italic;
+  font-size: 1.2rem;
+  color: #e6e6e6;
+  text-align: center;
+  border-left: 3px solid var(--accent, #b80f13);
+  border-right: 3px solid var(--accent, #b80f13);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.04);
+  text-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
+}
+
+/* Diploma */
+.about-diploma {
+  margin-top: 40px;
+  text-align: center;
+  font-size: 1rem;
+}
+
+.about-diploma .btn {
+  margin-left: 10px;
+  padding: 10px 18px;
+  border-radius: 8px;
+  background: var(--accent, #b80f13);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  box-shadow: 0 0 8px rgba(184, 15, 19, 0.4);
+  transition: all 0.3s ease;
+}
+
+.about-diploma .btn:hover {
+  box-shadow: 0 0 14px #ff2a2a, 0 0 24px rgba(184, 15, 19, 0.4);
+  transform: translateY(-2px);
+}
+
+/* Animacija fadeIn */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(25px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive prilagođavanje */
+@media (max-width: 900px) {
+  .about-section {
+    padding: 40px 16px;
+  }
+
+  .about-container {
+    padding: 20px 16px;
+  }
+
+  .about-title {
+    font-size: 2rem;
+  }
+
+  .about-tech .tech-icons {
+    gap: 0.8rem;
+  }
+
+  .about-tech .tech-icons span {
+    font-size: 0.9rem;
+    padding: 8px 12px;
+  }
+
+  .about-types li,
+  .about-principles li,
+  .about-timeline li {
+    font-size: 0.95rem;
+  }
+
+  .about-diploma .btn {
+    display: inline-block;
+    margin-top: 10px;
+  }
+}
+/* Paketi i cene */
+.about-pricing {
+  margin-top: 56px;
+  text-align: left;
+}
+
+.about-pricing h3 {
+  color: var(--accent, #b80f13);
+  font-size: 1.6rem;
+  margin-bottom: 14px;
+  text-shadow: 0 0 6px rgba(184, 15, 19, 0.6);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.pricing-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.pricing-list li {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  padding: 18px 20px;
+  border-radius: 8px;
+  margin-bottom: 14px;
+  line-height: 1.6;
+  position: relative;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(184, 15, 19, 0.1);
+}
+
+.pricing-list li:hover {
+  background: rgba(184, 15, 19, 0.15);
+  box-shadow: 0 0 14px rgba(184, 15, 19, 0.35);
+  transform: translateY(-3px);
+}
+
+.price {
+  display: block;
+  font-weight: 700;
+  color: #ff4c4c;
+  font-size: 1.2rem;
+  text-shadow: 0 0 8px rgba(255, 50, 50, 0.7);
+  margin-top: 6px;
+  letter-spacing: 0.5px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .pricing-list li {
+    font-size: 0.95rem;
+    padding: 14px 16px;
+  }
+
+  .price {
+    font-size: 1.05rem;
+  }
+}
